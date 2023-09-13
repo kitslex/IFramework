@@ -4,6 +4,9 @@ This IS NOT compatible with spigot (I don't plan on making it for a while, howev
 
 Currently Items are not dynamic and you might have to write your own Builder implementation if you need, you can also make it as a contribution, if there is an open issue for it.
 
+# EXAMPLES
+[Hypixel-Like Item implementation](https://github.com/Wyvii/IFramework/tree/master/examples)
+
 # Maven & Gradle
 
 # Maven
