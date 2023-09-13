@@ -43,3 +43,23 @@ dependencies {
 }
 ```
 
+# Contributing
+
+If you wish to contribute, (which is much appreciated) I would prefer if you
+looked through the open issues, find something that *as far as you know* no-one is working on.
+
+After that, please make a comment on the issue stating that you are now working on it,
+to tell other people that you are busy with that issue.
+
+Once you are finished please make a pull request, and it will get reviewed.
+
+# TODO
+- [ ] Dynamic Items
+- [ ] More base components
+
+# Authors
+- Ashy (Wyvi/Wyvii) (discord: Wyvi), if you wish to contact me use my discord.
+# License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
