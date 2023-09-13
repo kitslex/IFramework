@@ -8,6 +8,7 @@ Currently, Items are not dynamic, and you might have to write your own Builder i
 [Hypixel-Like Item implementation](https://github.com/Wyvii/IFramework/tree/master/examples)
 
 # Maven & Gradle
+
 [![](https://jitpack.io/v/Wyvii/IFramework.svg)](https://jitpack.io/#Wyvii/IFramework)
 # Maven
 
