@@ -54,29 +54,29 @@ public class InstantTransmissionAbility extends AbilityComponent {
     {
         try
         {
-            int f_ = distance;
-            for(int range = 1; range < distance; range++) {
+            int temp = distance;
+
+            for(int range = 0; range < distance - 1; range++) {
                 Location location = player.getTargetBlock(null, range).getLocation();
+
                 if (location.getBlock().getType() != Material.AIR)
-                {
-                    f_ = range;
+                    temp = range +1;
                     break;
-                }
             }
-            Location location = player.getTargetBlock(null, f_ - 1).getLocation();
+            Location location = player.getTargetBlock(null, temp - 1).getLocation();
+
             location.setYaw(player.getLocation().getYaw());
             location.setPitch(player.getLocation().getPitch());
+
             location.add(0.5, 0, 0.5);
-            if (f_ != 8)
-            {
+
+            if (temp != distance)
                 player.sendMessage(Color.colorize("&cYou can't teleport through blocks!"));
-            }
-            if (f_ > 1) {
-                player.teleport(location);
-            }
+
+            if (temp > 1) player.teleport(location);
             else player.teleport(player.getLocation());
         }
-        catch (IllegalStateException ex) {} // suppress bullshit errors thrown by Player#getTargetBlock
+        catch (IllegalStateException ex) {/*ignored*/}
         player.playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 3f, 1f);
     }
 }
