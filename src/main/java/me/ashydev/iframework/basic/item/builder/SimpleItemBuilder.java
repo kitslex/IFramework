@@ -3,21 +3,16 @@ package me.ashydev.iframework.basic.item.builder;
 import de.tr7zw.nbtapi.NBTCompound;
 import de.tr7zw.nbtapi.NBTItem;
 import de.tr7zw.nbtapi.iface.ReadWriteNBT;
-import me.ashydev.iframework.basic.item.CommonItem;
 import me.ashydev.iframework.framework.item.CustomItem;
 import me.ashydev.iframework.framework.item.ItemRegistry;
 import me.ashydev.iframework.framework.item.builder.ItemBuilder;
-import me.ashydev.iframework.framework.item.component.DrawableComponent;
 import me.ashydev.iframework.framework.item.component.ItemComponent;
 import me.ashydev.iframework.framework.item.component.LoreComponent;
 import me.ashydev.iframework.framework.item.component.MetaComponent;
 import me.ashydev.iframework.framework.item.component.modifier.ItemModifierComponent;
-import me.ashydev.iframework.framework.item.component.modifier.ModifierComponent;
 import me.ashydev.iframework.framework.item.component.serializable.NBTSerializableComponent;
 import me.ashydev.iframework.framework.item.component.types.ArrayComp;
-import me.ashydev.iframework.framework.types.registry.SimpleRegistryKey;
 import me.ashydev.iframework.framework.util.Color;
-import me.ashydev.iframework.hypixel.HypixelItem;
 import net.kyori.adventure.text.Component;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
@@ -27,7 +22,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.*;
-import java.util.stream.Stream;
 
 public class SimpleItemBuilder<T extends CustomItem> implements ItemBuilder<T> {
     private ItemRegistry<T> registry;
