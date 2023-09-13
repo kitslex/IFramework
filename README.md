@@ -9,7 +9,6 @@ Currently, Items are not dynamic, and you might have to write your own Builder i
 
 # Maven & Gradle
 [![](https://jitpack.io/v/Wyvii/IFramework.svg)](https://jitpack.io/#Wyvii/IFramework)
-
 # Maven
 
 ```xml
