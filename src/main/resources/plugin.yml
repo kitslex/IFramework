@@ -1,5 +1,0 @@
-name: IFramework
-version: '${project.version}'
-main: me.ashydev.iframework.IFramework
-api-version: '1.20'
-load: STARTUP
