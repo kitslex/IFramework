@@ -1,12 +1,7 @@
 package me.ashydev.iframework.basic.item.components;
 
-import com.google.common.collect.Multimap;
 import de.tr7zw.nbtapi.NBT;
-import de.tr7zw.nbtapi.NBTCompound;
 import de.tr7zw.nbtapi.iface.ReadWriteNBT;
-import it.unimi.dsi.fastutil.Hash;
-import lombok.Getter;
-import lombok.Setter;
 import me.ashydev.iframework.framework.item.component.MetaComponent;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
@@ -18,8 +13,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.UUID;
 
-@Getter
-@Setter
 public class SimpleMetaComponent implements MetaComponent {
     private boolean unique;
     private boolean glowing;
@@ -42,6 +35,96 @@ public class SimpleMetaComponent implements MetaComponent {
         this.flags = flags;
         this.customModelData = customModelData;
         this.attributeModifiers = attributeModifiers;
+    }
+
+
+    @Override
+    public boolean isUnique() {
+        return unique;
+    }
+
+    @Override
+    public void setUnique(boolean unique) {
+        this.unique = unique;
+    }
+
+    @Override
+    public boolean isGlowing() {
+        return glowing;
+    }
+
+    @Override
+    public void setGlowing(boolean glowing) {
+        this.glowing = glowing;
+    }
+
+    @Override
+    public boolean isUnbreakable() {
+        return unbreakable;
+    }
+
+    @Override
+    public void setUnbreakable(boolean unbreakable) {
+        this.unbreakable = unbreakable;
+    }
+
+    @Override
+    public ItemFlag[] getFlags() {
+        return flags;
+    }
+
+    @Override
+    public void setFlags(ItemFlag[] flags) {
+        this.flags = flags;
+    }
+
+    @Override
+    public int getCustomModelData() {
+        return customModelData;
+    }
+
+    @Override
+    public void setCustomModelData(int customModelData) {
+        this.customModelData = customModelData;
+    }
+
+    @Override
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    @Override
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    @Override
+    public HashMap<Attribute, Collection<AttributeModifier>> getAttributeModifiers() {
+        return attributeModifiers;
+    }
+
+    @Override
+    public void setAttributeModifiers(HashMap<Attribute, Collection<AttributeModifier>> attributeModifiers) {
+        this.attributeModifiers = attributeModifiers;
+    }
+
+    @Override
+    public Material getMaterial() {
+        return material;
+    }
+
+    @Override
+    public void setMaterial(Material material) {
+        this.material = material;
+    }
+
+    @Override
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     @Override
@@ -76,8 +159,7 @@ public class SimpleMetaComponent implements MetaComponent {
         unique = compound.hasTag("UniqueIdentifier");
     }
 
-    @Getter
-    @Setter
+
     public static class Builder {
         private final String id;
         private Material material = Material.STONE;
@@ -132,6 +214,75 @@ public class SimpleMetaComponent implements MetaComponent {
         public Builder attributeModifiers(HashMap<Attribute, Collection<AttributeModifier>> attributeModifiers) {
             this.attributeModifiers = attributeModifiers;
             return this;
+        }
+
+
+        public String getId() {
+            return id;
+        }
+
+        public Material getMaterial() {
+            return material;
+        }
+
+        public void setMaterial(Material material) {
+            this.material = material;
+        }
+
+        public boolean isUnique() {
+            return unique;
+        }
+
+        public void setUnique(boolean unique) {
+            this.unique = unique;
+        }
+
+        public boolean isGlowing() {
+            return glowing;
+        }
+
+        public void setGlowing(boolean glowing) {
+            this.glowing = glowing;
+        }
+
+        public boolean isUnbreakable() {
+            return unbreakable;
+        }
+
+        public void setUnbreakable(boolean unbreakable) {
+            this.unbreakable = unbreakable;
+        }
+
+        public ItemFlag[] getFlags() {
+            return flags;
+        }
+
+        public void setFlags(ItemFlag[] flags) {
+            this.flags = flags;
+        }
+
+        public int getCustomModelData() {
+            return customModelData;
+        }
+
+        public void setCustomModelData(int customModelData) {
+            this.customModelData = customModelData;
+        }
+
+        public String getDisplayName() {
+            return displayName;
+        }
+
+        public void setDisplayName(String displayName) {
+            this.displayName = displayName;
+        }
+
+        public HashMap<Attribute, Collection<AttributeModifier>> getAttributeModifiers() {
+            return attributeModifiers;
+        }
+
+        public void setAttributeModifiers(HashMap<Attribute, Collection<AttributeModifier>> attributeModifiers) {
+            this.attributeModifiers = attributeModifiers;
         }
 
         public SimpleMetaComponent build() {

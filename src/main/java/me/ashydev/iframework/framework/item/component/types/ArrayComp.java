@@ -21,6 +21,7 @@ public class ArrayComp<T extends ItemComponent> extends ArrayList<T> {
         super(c);
     }
 
+    @SafeVarargs
     public ArrayComp(@NotNull T... components) {
         super(List.of(components));
     }

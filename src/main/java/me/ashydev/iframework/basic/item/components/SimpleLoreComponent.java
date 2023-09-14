@@ -1,7 +1,5 @@
 package me.ashydev.iframework.basic.item.components;
 
-import lombok.Getter;
-import lombok.Setter;
 import me.ashydev.iframework.framework.item.component.LoreComponent;
 import me.ashydev.iframework.framework.util.Color;
 import net.kyori.adventure.text.Component;
@@ -10,8 +8,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Getter
-@Setter
 public class SimpleLoreComponent implements LoreComponent {
     private final ArrayList<String> lore;
 
@@ -49,4 +45,9 @@ public class SimpleLoreComponent implements LoreComponent {
             return new SimpleLoreComponent(lore);
         }
     }
+
+    public ArrayList<String> getLore() {
+        return lore;
+    }
+
 }

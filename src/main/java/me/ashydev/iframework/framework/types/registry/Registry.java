@@ -2,19 +2,18 @@ package me.ashydev.iframework.framework.types.registry;
 
 import it.unimi.dsi.fastutil.Hash;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
-import lombok.Getter;
 import me.ashydev.iframework.framework.types.IPair;
 import me.ashydev.iframework.framework.types.Pair;
 
 import java.util.*;
 
-@Getter
 public class Registry<K, S> implements IRegistry<K, S> {
     public enum MapType {
         NORMAL, FAST, FAST_ACCESS, TREE, CUSTOM
     }
 
     private final MapType mapType;
+
     private Map<K, S> registry;
 
     public Registry(MapType mapType) {
@@ -150,5 +149,11 @@ public class Registry<K, S> implements IRegistry<K, S> {
         return registry.values();
     }
 
+    public Map<K, S> getRegistry() {
+        return registry;
+    }
 
+    public void setRegistry(Map<K, S> registry) {
+        this.registry = registry;
+    }
 }

@@ -7,8 +7,6 @@ import com.github.stefvanschie.inventoryframework.pane.PaginatedPane;
 import com.github.stefvanschie.inventoryframework.pane.Pane;
 import com.github.stefvanschie.inventoryframework.pane.StaticPane;
 import de.tr7zw.nbtapi.NBTItem;
-import lombok.Getter;
-import lombok.Setter;
 import me.ashydev.iframework.IFramework;
 import me.ashydev.iframework.basic.item.CommonItem;
 import me.ashydev.iframework.framework.gui.ItemGUI;
@@ -24,8 +22,6 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-@Getter
-@Setter
 public class SimpleItemGUI<T extends CustomItem> implements ItemGUI<T> {
     private ItemRegistry<T> registry;
     private ItemBuilder<T> builder;
@@ -36,6 +32,32 @@ public class SimpleItemGUI<T extends CustomItem> implements ItemGUI<T> {
         this.builder = builder;
 
         setup();
+    }
+
+    @Override
+    public ItemRegistry<T> getRegistry() {
+        return registry;
+    }
+
+    public void setRegistry(ItemRegistry<T> registry) {
+        this.registry = registry;
+    }
+
+    @Override
+    public ItemBuilder<T> getBuilder() {
+        return builder;
+    }
+
+    public void setBuilder(ItemBuilder<T> builder) {
+        this.builder = builder;
+    }
+
+    public ChestGui getGui() {
+        return gui;
+    }
+
+    public void setGui(ChestGui gui) {
+        this.gui = gui;
     }
 
     void setup() {

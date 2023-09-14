@@ -1,14 +1,16 @@
 package me.ashydev.iframework.framework.util;
 
-import lombok.Getter;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.ChatColor;
 
-@Getter
 public class Color {
     private final byte[] bytes = new byte[3];
+
+    public byte[] getBytes() {
+        return bytes;
+    }
 
     public Color(int r, int g, int b) {
         if (r > 255 || r < 0) throw new IllegalArgumentException("r must be between 0 and 255");
