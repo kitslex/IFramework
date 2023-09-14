@@ -1,7 +1,6 @@
 package me.ashydev.iframework.framework.item.component;
 
 import net.kyori.adventure.text.Component;
-import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.List;
 

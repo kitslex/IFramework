@@ -1,11 +1,9 @@
 package me.ashydev.iframework.framework.item;
 
 import me.ashydev.iframework.framework.item.component.ItemComponent;
-import me.ashydev.iframework.framework.item.component.MetaComponent;
 import me.ashydev.iframework.framework.item.component.types.ArrayComp;
 
 import java.util.Collection;
-import java.util.Optional;
 
 public abstract class AbstractItem implements CustomItem {
     private final ArrayComp<ItemComponent> components = new ArrayComp<>();
@@ -14,7 +12,8 @@ public abstract class AbstractItem implements CustomItem {
         this.components.addAll(components);
     }
 
-    public AbstractItem() { }
+    public AbstractItem() {
+    }
 
     @Override
     public ArrayComp<ItemComponent> getComponents() {

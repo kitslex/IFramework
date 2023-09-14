@@ -7,6 +7,6 @@ import java.util.List;
 
 public class SharpnessEnchantment extends EnchantmentComponent {
     public SharpnessEnchantment(int level) {
-        super("Sharpness", "SHARPNESS", List.of("Increases melee damage dealt by", "&a" + (5*level) + "%"), "&9", level, 5, 1);
+        super("Sharpness", "SHARPNESS", List.of("Increases melee damage dealt by", "&a" + (5 * level) + "%"), "&9", level, 5, 1);
     }
 }

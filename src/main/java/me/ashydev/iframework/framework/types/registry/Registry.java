@@ -8,12 +8,7 @@ import me.ashydev.iframework.framework.types.Pair;
 import java.util.*;
 
 public class Registry<K, S> implements IRegistry<K, S> {
-    public enum MapType {
-        NORMAL, FAST, FAST_ACCESS, TREE, CUSTOM
-    }
-
     private final MapType mapType;
-
     private Map<K, S> registry;
 
     public Registry(MapType mapType) {
@@ -55,7 +50,6 @@ public class Registry<K, S> implements IRegistry<K, S> {
     public S get(K key) {
         return registry.get(key);
     }
-
 
     @Override
     public S getOrDefault(K key, S defaultValue) {
@@ -155,5 +149,9 @@ public class Registry<K, S> implements IRegistry<K, S> {
 
     public void setRegistry(Map<K, S> registry) {
         this.registry = registry;
+    }
+
+    public enum MapType {
+        NORMAL, FAST, FAST_ACCESS, TREE, CUSTOM
     }
 }

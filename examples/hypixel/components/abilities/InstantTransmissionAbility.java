@@ -50,18 +50,16 @@ public class InstantTransmissionAbility extends AbilityComponent {
         }
     }
 
-    public void teleport(Player player, int distance)
-    {
-        try
-        {
+    public void teleport(Player player, int distance) {
+        try {
             int temp = distance;
 
-            for(int range = 0; range < distance - 1; range++) {
+            for (int range = 0; range < distance - 1; range++) {
                 Location location = player.getTargetBlock(null, range).getLocation();
 
                 if (location.getBlock().getType() != Material.AIR)
-                    temp = range +1;
-                    break;
+                    temp = range + 1;
+                break;
             }
             Location location = player.getTargetBlock(null, temp - 1).getLocation();
 
@@ -75,8 +73,7 @@ public class InstantTransmissionAbility extends AbilityComponent {
 
             if (temp > 1) player.teleport(location);
             else player.teleport(player.getLocation());
-        }
-        catch (IllegalStateException ex) {/*ignored*/}
+        } catch (IllegalStateException ex) {/*ignored*/}
         player.playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 3f, 1f);
     }
 }

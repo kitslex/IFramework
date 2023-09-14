@@ -8,7 +8,9 @@ import org.bukkit.entity.Player;
 
 public interface ItemGUI<I extends CustomItem> {
     ItemRegistry<I> getRegistry();
+
     ItemBuilder<I> getBuilder();
+
     ChestGui getGUI();
 
     void show(Player player);

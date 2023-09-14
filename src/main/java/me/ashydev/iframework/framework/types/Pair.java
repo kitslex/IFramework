@@ -19,13 +19,13 @@ public class Pair<A, B> implements IPair<A, B> {
     }
 
     @Override
-    public B getSecond() {
-        return b;
+    public void setFirst(A value) {
+        a = value;
     }
 
     @Override
-    public void setFirst(A value) {
-        a = value;
+    public B getSecond() {
+        return b;
     }
 
     @Override

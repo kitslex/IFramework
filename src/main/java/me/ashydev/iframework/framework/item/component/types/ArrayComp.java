@@ -2,7 +2,6 @@ package me.ashydev.iframework.framework.item.component.types;
 
 import me.ashydev.iframework.framework.item.component.DrawableComponent;
 import me.ashydev.iframework.framework.item.component.ItemComponent;
-import org.bukkit.entity.Item;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -15,7 +14,7 @@ public class ArrayComp<T extends ItemComponent> extends ArrayList<T> {
         super(initialCapacity);
     }
 
-    public ArrayComp() {}
+    public ArrayComp() { }
 
     public ArrayComp(@NotNull Collection<? extends T> c) {
         super(c);
@@ -24,6 +23,19 @@ public class ArrayComp<T extends ItemComponent> extends ArrayList<T> {
     @SafeVarargs
     public ArrayComp(@NotNull T... components) {
         super(List.of(components));
+    }
+
+    public static <S extends ItemComponent> ArrayComp<S> with(ArrayComp<S> components, boolean staticMethod) {
+        return new ArrayComp<>(components);
+    }
+
+    @SafeVarargs
+    public static <S extends ItemComponent> ArrayComp<S> with(boolean staticMethod, S... components) {
+        return new ArrayComp<>(List.of(components));
+    }
+
+    public static <T extends ItemComponent> ArrayComp<T> of(T... components) {
+        return new ArrayComp<>(List.of(components));
     }
 
     @SuppressWarnings("unchecked")
@@ -58,22 +70,10 @@ public class ArrayComp<T extends ItemComponent> extends ArrayList<T> {
         addAll(components);
         return this;
     }
+
     @SafeVarargs
     public final ArrayComp<T> with(T... components) {
         addAll(List.of(components));
         return this;
-    }
-    
-    public static <S extends ItemComponent> ArrayComp<S> with(ArrayComp<S> components, boolean staticMethod) {
-        return new ArrayComp<>(components);
-    }
-    
-    @SafeVarargs
-    public static <S extends ItemComponent> ArrayComp<S> with(boolean staticMethod, S... components) {
-        return new ArrayComp<>(List.of(components));
-    }
-
-    public static <T extends ItemComponent> ArrayComp<T> of(T... components) {
-        return new ArrayComp<>(List.of(components));
     }
 }

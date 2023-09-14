@@ -29,7 +29,7 @@ public abstract class HypixelItem extends AbstractItem {
     private MetaComponent meta;
 
     public HypixelItem(String name, Material material, ArrayComp<StatisticComponent<?>> statistics, DescriptionComponent description, EnchantmentHolderComponent enchantments, ArrayComp<AbilityComponent> abilities, InfoComponent info) {
-        super (new ArrayComp<ItemComponent>(statistics)
+        super(new ArrayComp<ItemComponent>(statistics)
                 .with(description)
                 .with(enchantments)
                 .with(abilities)

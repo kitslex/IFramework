@@ -16,16 +16,10 @@ import java.util.List;
 @Getter
 @Setter
 public class StatisticComponent<T> implements IdentifiableComponent, NBTSerializableComponent, HypixelComponent, LoreComponent {
-    public enum OperatorPosition {
-        PREFIX,
-        SUFFIX
-    }
-
     private T value;
     private String name, id, operator;
     private OperatorPosition operatorPosition;
     private Color color;
-
     public StatisticComponent(String name, String id, T value, Color color, String operator, OperatorPosition operatorPosition) {
         this.name = name;
         this.id = id;
@@ -70,5 +64,10 @@ public class StatisticComponent<T> implements IdentifiableComponent, NBTSerializ
         operatorPosition = OperatorPosition.valueOf(readWriteNBT.getString("operatorPosition"));
         color = Color.fromHex(readWriteNBT.getString("color"));
         value = (T) compound.getObject("value", Object.class);
+    }
+
+    public enum OperatorPosition {
+        PREFIX,
+        SUFFIX
     }
 }

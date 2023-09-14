@@ -8,10 +8,6 @@ import org.bukkit.ChatColor;
 public class Color {
     private final byte[] bytes = new byte[3];
 
-    public byte[] getBytes() {
-        return bytes;
-    }
-
     public Color(int r, int g, int b) {
         if (r > 255 || r < 0) throw new IllegalArgumentException("r must be between 0 and 255");
         if (g > 255 || g < 0) throw new IllegalArgumentException("g must be between 0 and 255");
@@ -28,7 +24,6 @@ public class Color {
         bytes[2] = b;
     }
 
-
     public Color(String hex) {
         if (hex.startsWith("#")) hex = hex.substring(1);
 
@@ -41,9 +36,6 @@ public class Color {
         bytes[2] = b;
     }
 
-    public String getHex(String prefix) {
-        return prefix + String.format("%02x%02x%02x", bytes[0], bytes[1], bytes[2]);
-    }
     public static Color fromHex(String hex) {
         return new Color(hex);
     }
@@ -59,5 +51,13 @@ public class Color {
     @SuppressWarnings("deprecation")
     public static String translate(String s) {
         return ChatColor.translateAlternateColorCodes('&', s);
+    }
+
+    public byte[] getBytes() {
+        return bytes;
+    }
+
+    public String getHex(String prefix) {
+        return prefix + String.format("%02x%02x%02x", bytes[0], bytes[1], bytes[2]);
     }
 }

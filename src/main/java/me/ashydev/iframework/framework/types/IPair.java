@@ -2,9 +2,11 @@ package me.ashydev.iframework.framework.types;
 
 public interface IPair<A, B> {
     A getFirst();
+
     void setFirst(A value);
 
     B getSecond();
+
     void setSecond(B value);
 
     default A getA() {

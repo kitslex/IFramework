@@ -6,9 +6,6 @@ import com.github.stefvanschie.inventoryframework.pane.OutlinePane;
 import com.github.stefvanschie.inventoryframework.pane.PaginatedPane;
 import com.github.stefvanschie.inventoryframework.pane.Pane;
 import com.github.stefvanschie.inventoryframework.pane.StaticPane;
-import de.tr7zw.nbtapi.NBTItem;
-import me.ashydev.iframework.IFramework;
-import me.ashydev.iframework.basic.item.CommonItem;
 import me.ashydev.iframework.framework.gui.ItemGUI;
 import me.ashydev.iframework.framework.item.CustomItem;
 import me.ashydev.iframework.framework.item.ItemRegistry;
@@ -18,8 +15,6 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 public class SimpleItemGUI<T extends CustomItem> implements ItemGUI<T> {

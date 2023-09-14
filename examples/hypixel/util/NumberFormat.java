@@ -3,8 +3,7 @@ package me.ashydev.iframework.hypixel.util;
 import java.util.TreeMap;
 
 public class NumberFormat {
-    private static final TreeMap<Double, String> ROMAN_NUMERALS = new TreeMap<>()
-    {
+    private static final TreeMap<Double, String> ROMAN_NUMERALS = new TreeMap<>() {
         {
             put(1000D, "M");
             put(900D, "CM");
