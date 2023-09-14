@@ -22,14 +22,14 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 public class SimpleItemBuilder<T extends CustomItem> implements ItemBuilder<T> {
-    private ItemRegistry<T> registry;
+    private final ItemRegistry<T> registry;
 
     public SimpleItemBuilder(ItemRegistry<T> registry) {
         this.registry = registry;
     }
-
 
     @Override
     public ItemStack build(T input) {
@@ -125,8 +125,18 @@ public class SimpleItemBuilder<T extends CustomItem> implements ItemBuilder<T> {
         if (compound == null) return null;
 
         String id = compound.getString("id");
-        if (id == null) return null;
-        return registry.get(id);
+        T item = registry.get(id);
+        item.getComponents().clear();
+
+        ArrayComp<NBTSerializableComponent> components = registry.getComponents().getItemsOfType(NBTSerializableComponent.class, true);
+
+        for (NBTSerializableComponent component : components) {
+            component.deserialize(compound);
+            item.getComponents().add(component);
+        }
+
+
+        return item;
     }
 
     @Override
@@ -153,6 +163,7 @@ public class SimpleItemBuilder<T extends CustomItem> implements ItemBuilder<T> {
 
     @Override
     public ItemStack update(ItemStack output) {
-        throw new UnsupportedOperationException("Not implemented yet!");
+        T item = from(output);
+        return build(item);
     }
 }
