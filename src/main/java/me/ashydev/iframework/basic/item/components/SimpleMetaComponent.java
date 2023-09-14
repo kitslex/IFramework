@@ -3,6 +3,7 @@ package me.ashydev.iframework.basic.item.components;
 import de.tr7zw.nbtapi.NBT;
 import de.tr7zw.nbtapi.iface.ReadWriteNBT;
 import me.ashydev.iframework.framework.item.component.MetaComponent;
+import me.ashydev.iframework.framework.item.component.serializable.SerializableComponent;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
@@ -157,6 +158,11 @@ public class SimpleMetaComponent implements MetaComponent {
     public void deserialize(ReadWriteNBT compound) {
         id = compound.getString("id");
         unique = compound.hasTag("UniqueIdentifier");
+    }
+
+    @Override
+    public SerializableComponent<ReadWriteNBT> clone() {
+        return new SimpleMetaComponent(displayName, id, material, unique, glowing, unbreakable, flags, customModelData, attributeModifiers);
     }
 
 
