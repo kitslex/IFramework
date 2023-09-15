@@ -125,19 +125,9 @@ public class SimpleItemBuilder<T extends CustomItem> implements ItemBuilder<T> {
         if (compound == null) return null;
 
         String id = compound.getString("id");
-        T item = registry.get(id);
-
-        ArrayComp<NBTSerializableComponent> components = item.getComponents().getItemsOfType(NBTSerializableComponent.class, true);
-
-        ArrayComp<NBTSerializableComponent> newComponents = new ArrayComp<>();
-        for (NBTSerializableComponent component : components) {
-            component.clone().deserialize(compound);
-            newComponents.add(component);
-        }
 
 
-
-        return item;
+        return registry.get(id);
     }
 
     @Override
