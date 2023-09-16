@@ -5,7 +5,7 @@ import me.ashydev.iframework.hypixel.components.DescriptionComponent;
 import me.ashydev.iframework.hypixel.components.InfoComponent;
 import me.ashydev.iframework.hypixel.components.StatisticComponent;
 import me.ashydev.iframework.hypixel.components.abilities.InstantTransmissionAbility;
-import me.ashydev.iframework.hypixel.components.enchantment.EnchantmentHolderComponent;
+import me.ashydev.iframework.hypixel.components.enchantment.EnchantmentContainer;
 import me.ashydev.iframework.hypixel.components.enchantment.enchantments.SharpnessEnchantment;
 import me.ashydev.iframework.hypixel.components.stats.DamageStatistic;
 import me.ashydev.iframework.hypixel.info.ItemType;
@@ -21,7 +21,7 @@ public class ExampleItem extends HypixelItem {
                         new DamageStatistic(500.0)
                 ),
                 new DescriptionComponent("This is an example item."),
-                new EnchantmentHolderComponent(
+                new EnchantmentContainer(
                         new SharpnessEnchantment(5)
                 ),
                 new ArrayComp<>(

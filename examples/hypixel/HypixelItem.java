@@ -13,6 +13,7 @@ import me.ashydev.iframework.hypixel.components.DescriptionComponent;
 import me.ashydev.iframework.hypixel.components.InfoComponent;
 import me.ashydev.iframework.hypixel.components.StatisticComponent;
 import me.ashydev.iframework.hypixel.components.enchantment.EnchantmentComponent;
+import me.ashydev.iframework.hypixel.components.enchantment.EnchantmentContainer;
 import me.ashydev.iframework.hypixel.components.enchantment.EnchantmentHolderComponent;
 import me.ashydev.iframework.hypixel.info.Rarity;
 import org.bukkit.Material;
@@ -24,11 +25,11 @@ public abstract class HypixelItem extends AbstractItem {
     private DescriptionComponent description;
     private ArrayComp<StatisticComponent<?>> statistics;
     private InfoComponent info;
-    private EnchantmentHolderComponent enchantments;
+    private EnchantmentContainer enchantments;
     private ArrayComp<AbilityComponent> abilities;
     private MetaComponent meta;
 
-    public HypixelItem(String name, Material material, ArrayComp<StatisticComponent<?>> statistics, DescriptionComponent description, EnchantmentHolderComponent enchantments, ArrayComp<AbilityComponent> abilities, InfoComponent info) {
+    public HypixelItem(String name, Material material, ArrayComp<StatisticComponent<?>> statistics, DescriptionComponent description, EnchantmentContainer enchantments, ArrayComp<AbilityComponent> abilities, InfoComponent info) {
         super(new ArrayComp<ItemComponent>(statistics)
                 .with(description)
                 .with(enchantments)
